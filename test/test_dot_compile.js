@@ -57,6 +57,10 @@ describe('dot-compile', function() {
   it('should be compile partials-in-partials', function() {
     expect(nodeRequirejsTmpl.partials()).to.have.string('can-compile-partial-in-partials');
   });
+  it('should use specified templateSettings in grunt task, allowing mulitple varnames etc', function() {
+
+    expect(nodeRequirejsTmpl.varnames({'foo': 'hello'}, {'bar': 'world'})).to.equal('<div>hello</div><div>world</div>');
+  });
 });
 
 describe('requirejs-only', function(){

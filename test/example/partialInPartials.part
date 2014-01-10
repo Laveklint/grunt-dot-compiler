@@ -1,5 +1,5 @@
 
-{{##def.customizablePartial: load('./custom.part', {
+{{##def.customizablePartial: load('test/example/custom.part', {
   test1: 'can-compile-partial-in-partials',
   test2: 'test2'
 }) #}}

@@ -1,0 +1,2 @@
+<div>{{= it.foo}}</div>
+<div>{{= op.bar}}</div>
