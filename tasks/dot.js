@@ -15,19 +15,6 @@ module.exports = function (grunt) {
     grunt.registerMultiTask('dot', 'prepares and combines any type of template into a script include', function () {
         var options = this.options();
         options.gruntRoot = path.dirname(grunt.file.findup('Gruntfile.js')) + '/';
-        options.templateSettings = {
-            evaluate:    /\{\{([\s\S]+?)\}\}/g,
-            interpolate: /\{\{=([\s\S]+?)\}\}/g,
-            encode:      /\{\{!([\s\S]+?)\}\}/g,
-            use:         /\{\{#([\s\S]+?)\}\}/g,
-            define:      /\{\{##\s*([\w\.$]+)\s*(\:|=)([\s\S]+?)#\}\}/g,
-            conditional: /\{\{\?(\?)?\s*([\s\S]*?)\s*\}\}/g,
-            iterate:     /\{\{~\s*(?:\}\}|([\s\S]+?)\s*\:\s*([\w$]+)\s*(?:\:\s*([\w$]+))?\s*\}\})/g,
-            varname: 'it, op',
-            strip: true,
-            append: true,
-            selfcontained: false
-        };
 
         this.files.forEach(function (file) {
             var compiler, src, existingSrcFiles;
